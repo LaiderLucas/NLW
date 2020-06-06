@@ -83,7 +83,7 @@ function handleSelectedItem(event) {
     } else {
         // se não estiver selecionado
         // adicionar á seleção
-        selectedItems.push(itemId)
+        selectedItems.push(" " +itemId)
     }
 
     // atualizar o campo escondido com os itens selecionados
