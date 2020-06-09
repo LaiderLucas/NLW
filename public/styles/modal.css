@@ -51,7 +51,7 @@
     display: flex;
 }
 
-#modal form input {
+#modal form select {
     flex: 1;
     background-color: #f0f0f5;
     border-radius: 8px 0 0 8px;
@@ -61,16 +61,22 @@
     color: #6c6c80;
 }
 
+#modal form select.state-search {
+    margin-bottom: 16px;
+    height: 72px;
+}
+
 #modal form button {
     width: 72px;
     height: 72px;
     background-color: var(--primary-color);
     border: 0;
-    border-radius: 0 8px 0 8px 0;
+    border-radius: 0 8px 8px 0;
 }
 
-#modal form button:hover {
+#modal form button#search:hover {
     background-color: #2fb85e;
+    cursor: pointer;
 }
 
 /* para modal created */

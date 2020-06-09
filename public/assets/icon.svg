@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <symbol id="svg_8" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <linearGradient gradientUnits="userSpaceOnUse" id="svg_7" x1="256" x2="256" y1="512" y2="0">
+    <stop offset="0" stop-color="#4CB8C4"/>
+    <stop offset="1" stop-color="#3CD3AD"/>
+   </linearGradient>
+   <circle cx="256" cy="256" fill="url(#svg_7)" r="256"/>
+   <path d="m375,154l-180.8,180.8l-57.2,-57.1c-4.3,-4.3 -11.2,-4.3 -15.4,0c-4.3,4.3 -4.3,11.2 0,15.4l64.9,64.9c2.1,2.1 4.9,3.2 7.7,3.2c2.8,0 5.6,-1.1 7.7,-3.2l188.5,-188.5c4.3,-4.3 4.3,-11.2 0,-15.4c-4.3,-4.3 -11.2,-4.3 -15.4,-0.1z" fill="#FFFFFF"/>
+  </symbol>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_5"/>
+  <use id="svg_9" transform="matrix(0.193257 0 0 0.193257 165.289 129.474)" x="465.021285" xlink:href="#svg_8" y="290.519156"/>
+  <g id="svg_10"/>
+ </g>
+</svg>

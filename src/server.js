@@ -53,7 +53,7 @@ server.post("/savepoint", (req, res) => {
 
    function afterInsertData(err){
        if(err) {
-           return console.log(err)
+        return res.render("create-point.html", { saved: false })
        }
 
        return res.render("create-point.html", { saved: true })

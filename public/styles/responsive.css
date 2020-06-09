@@ -38,6 +38,27 @@
         flex-direction: column;
         line-height: 30px;
     }
+
+    #page-create-point header {
+        flex-direction: column;
+    }
+
+    #page-create-point form button {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    #page-create-point header a {
+        margin-top: 20px;
+    }
+
+    #page-search-results header {
+        flex-direction: column;
+    }
+
+    #page-search-results header a {
+        margin-top: 20px;
+    }
 }
 
 @media (min-width: 1700px) {

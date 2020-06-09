@@ -54,17 +54,17 @@
 
             <div class="field">
                 <label for="state">Estado</label>
-                <select name="uf" required>
+                <select name="uf" id="uf" required>
                     <option value="">Selecione o Estado</option>
                 </select>
 
-                <input type="hidden" name="state">
+                <input type="hidden" name="state" id="state">
 
             </div>
 
             <div class="field">
                 <label for="city">Cidade</label>
-                <select name="city" disabled required>
+                <select name="city" id="city" disabled required>
                     <option value="">Selecione a Cidade</option>
                 </select>
 
@@ -129,8 +129,12 @@
     {% if saved %}
         {% include "partials/point-created.html" %}
     {% endif %}
+    {% if saved == false %}
+    {% include "partials/point-not-created.html" %}
+{% endif %}
 {% endblock modal %}
 
 {% block scripts %}
 <script src="/scripts/create-point.js"></script>
+<script src="/scripts/api-city-and-state.js"></script>
 {% endblock scripts %}
