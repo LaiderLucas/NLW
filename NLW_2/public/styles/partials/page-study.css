@@ -82,6 +82,38 @@
     line-height: 2.8rem;
 }
 
+.teacher-item .schedules {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2rem 0 2rem;
+}
+
+.teacher-item .schedules .schedule {
+    min-width: 8.4rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--color-box-footer);
+    border-radius: 0.8rem;
+    border: 0.1rem solid var(--color-line-in-white);
+    padding: 1rem
+}
+
+.teacher-item .schedules .opacity{
+    opacity: 50%;
+}
+
+.teacher-item .schedules .schedule p{
+    font-size: 1rem
+}
+
+.teacher-item .schedules .schedule b{
+    font-size: 1.2rem
+}
+
 .teacher-item footer{
     padding: 3.2rem 2rem;
     background-color: var(--color-box-footer);
@@ -184,6 +216,7 @@
     .teacher-item > p {
         padding: 0 32px;
     }
+
 
     .teacher-item footer p strong {
         display: initial;

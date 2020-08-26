@@ -55,7 +55,6 @@
             </div>
         </header>
         <main>
-
             {% if proffys == "" %}
                 <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
 
@@ -67,18 +66,41 @@
                     <header>
                         <img 
                             src="{{proffy.avatar}}" 
-                            alt="{{proffy.name}}">
+                            alt="{{proffy.name}} ">
                         <div>
-                            <strong>{{proffy.name}}</strong>
+                            <strong>{{proffy.name}} </strong>
                             <span>{{proffy.subject}}</span>
+                            
                         </div>
                     </header>
                 
                     <p>{{proffy.bio}}</p>
+                    <div class="schedules">
+                        {% for weekday in weekdays %}
+                            
+                            <div class='schedule {{ "opacity" if (weekdayList[loop.index0].weekday == weekday) and (weekdayList[loop.index0].id == 15)}}'>
+                                <p>Dia</p>
+                                <b>{{weekday | replace("-feira","")}}</b>
+                                <br>
+                                <p>Horário</p>
+                                <b>{{weekdayList[loop.index0].time_from.hourFormated}} - {{weekdayList[loop.index0].time_to.hourFormated}}</b>
+                            </div>
+                           
+                        {% endfor %}
+                        
+                    </div>
+                    
                 
                     <footer>
                         <p>Preço/hora<strong>R$ {{proffy.cost}}</strong>
                         </p>
+                        {{weekdayList[0].id}}
+                        {% for t in weekdayList%}
+                            {{t.weekday}}
+                        {% endfor %}
+
+                      
+
                     <a href="https://api.whatsapp.com/send?phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.subject}} {{proffy.name}}" class="button" target="_blank">
                             <img src="/images/icons/whatsapp.svg" alt="Whatsapp"> Entrar em contato
                     </a>
@@ -88,6 +110,7 @@
                 {%endfor%}
             
             {% endif %}
+            
 
         </main>
     </div>

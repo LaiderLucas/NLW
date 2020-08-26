@@ -48,3 +48,14 @@ label small{
     padding-left: 1.2rem;
     color: var(--color-small-info);
 }
+
+.btn-remove {
+    font: 900 4.2rem Archivo;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    cursor: pointer;
+
+}
