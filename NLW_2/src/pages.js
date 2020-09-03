@@ -19,7 +19,7 @@ async function pageStudy(req, res){
     const timeToMinutes = convertHoursToMinutes(filters.time)
     
     const query = `
-        SELECT classes.id as class_id, classes.subject, classes.cost, classes.proffy_id, proffys.*
+        SELECT classes.id as class_id, classes.subject, classes.cost, classes.proffy_id, proffys.*, proffys.id as schedule
         FROM proffys
         JOIN classes ON (classes.proffy_id = proffys.id)
         WHERE EXISTS (
@@ -33,41 +33,47 @@ async function pageStudy(req, res){
         AND classes.subject = '${filters.subject}'
     `
 
-   async function querySchedules(class_id){
-        const querySchedule = `
-        SELECT * FROM class_schedule WHERE class_id = ${class_id}`
-        //console.log(class_id)
-        return querySchedule
+   
+
+    /*
+    async function weekdayList(class_id){
+        const db = await Database
+        const List =  await db.all( await querySchedules(class_id))
+        List.map( (schedule) => {
+            schedule.weekday = weekdays[schedule.weekday]
+            schedule.time_from = convertMinutesToHours(schedule.time_from)
+            schedule.time_to = convertMinutesToHours(schedule.time_to)
+        }) 
+        return List
     }
+    */
+    
     try {
         
         const db = await Database
+
+        async function querySchedules(class_id){
+            const querySchedule = `
+            SELECT * FROM class_schedule where class_id = ${class_id}`
+            
+            const schedule = "lkdfn"//await db.all(querySchedule)
+            
+
+            return schedule
+        }
+
         const proffys = await db.all(query)
-        proffys.map((proffy) => {
+        proffys.map( async (proffy) => {
             proffy.subject = getSubject(proffy.subject)
+            const getSchedules =  await querySchedules(proffy.class_id)
+            proffy.schedule = getSchedules
+            console.log(getSchedules)
+
         })
 
-
-        if (proffys == ''){
-            proffys[0].class_id = 0
-        }else {
-            proffys[0].class_id = proffys[0].class_id
-        }
-        
         console.log(proffys)
 
-            const weekdayList =  await db.all( await querySchedules(proffys[0].class_id))
-            
-            weekdayList.map( (schedule) => {
-                schedule.weekday = weekdays[schedule.weekday]
-                schedule.time_from = convertMinutesToHours(schedule.time_from)
-                schedule.time_to = convertMinutesToHours(schedule.time_to)
-            })
-
-            console.log(weekdayList)
-        
-
-        return res.render('study.html', {proffys, subjects, filters, weekdays, weekdayList})
+        return res.render('study.html', {proffys, subjects, filters, weekdays})
 
     } catch (error) {
         console.log(error)
