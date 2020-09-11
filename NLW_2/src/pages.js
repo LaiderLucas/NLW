@@ -4,22 +4,22 @@ const { subjects, weekdays, getSubject, convertHoursToMinutes, convertMinutesToH
 const db = require('./database/db')
 
 
-function pageLanding(req, res){
+function pageLanding(req, res) {
     return res.render("index.html")
 }
 
-async function pageStudy(req, res){
+async function pageStudy(req, res) {
     const filters = req.query
 
     if (!filters.subject || !filters.weekday || !filters.time) {
 
-        return res.render("study.html", {filters, subjects, weekdays })
+        return res.render("study.html", { filters, subjects, weekdays })
     }
 
     const timeToMinutes = convertHoursToMinutes(filters.time)
-    
+
     const query = `
-        SELECT classes.id as class_id, classes.subject, classes.cost, classes.proffy_id, proffys.*, proffys.id as schedule
+        SELECT classes.id as class_id, classes.subject, classes.cost, classes.proffy_id, proffys.*
         FROM proffys
         JOIN classes ON (classes.proffy_id = proffys.id)
         WHERE EXISTS (
@@ -33,54 +33,57 @@ async function pageStudy(req, res){
         AND classes.subject = '${filters.subject}'
     `
 
-   
-
-    /*
-    async function weekdayList(class_id){
-        const db = await Database
-        const List =  await db.all( await querySchedules(class_id))
-        List.map( (schedule) => {
-            schedule.weekday = weekdays[schedule.weekday]
-            schedule.time_from = convertMinutesToHours(schedule.time_from)
-            schedule.time_to = convertMinutesToHours(schedule.time_to)
-        }) 
-        return List
-    }
-    */
-    
     try {
-        
+
         const db = await Database
 
-        async function querySchedules(class_id){
+        async function querySchedules(class_id) {
             const querySchedule = `
-            SELECT * FROM class_schedule where class_id = ${class_id}`
-            
-            const schedule = "lkdfn"//await db.all(querySchedule)
-            
+            SELECT * FROM class_schedule where class_id = ${class_id} order by weekday`
+
+            const schedule = await db.all(querySchedule)
+
 
             return schedule
         }
 
-        const proffys = await db.all(query)
-        proffys.map( async (proffy) => {
-            proffy.subject = getSubject(proffy.subject)
-            const getSchedules =  await querySchedules(proffy.class_id)
-            proffy.schedule = getSchedules
-            console.log(getSchedules)
+        const Proffys = await db.all(query)
 
+
+        Proffys.map(async (proffy) => {
+            proffy.subject = getSubject(proffy.subject)
         })
 
-        console.log(proffys)
+        const schedules = []
+        async function teste() {
 
-        return res.render('study.html', {proffys, subjects, filters, weekdays})
+            for (const [id, proffy] of Proffys.entries()) {
+
+                const getSchedules = await querySchedules(proffy.class_id)
+
+                getSchedules.map((time) => {
+                    time.time_from = convertMinutesToHours(time.time_from)
+                    time.time_to = convertMinutesToHours(time.time_to)
+                })
+
+                schedules.push(getSchedules)
+            }
+        }
+
+        await teste()
+
+        console.log(schedules)
+
+
+
+        return res.render('study.html', { Proffys, subjects, filters, weekdays, schedules })
 
     } catch (error) {
         console.log(error)
     }
 }
 
-function pageGiveClasses(req, res){
+function pageGiveClasses(req, res) {
 
     return res.render("give-classes.html", { subjects, weekdays })
 }
@@ -100,7 +103,7 @@ async function saveClasses(req, res) {
         cost: req.body.cost
     }
 
-    const classScheduleValues = req.body.weekday.map( (weekday, index) =>{
+    const classScheduleValues = req.body.weekday.map((weekday, index) => {
 
         return {
             weekday,
@@ -116,16 +119,16 @@ async function saveClasses(req, res) {
         let queryString = "?subject=" + req.body.subject
         queryString += "&weekday=" + req.body.weekday[0]
         queryString += "&time=" + req.body.time_from[0]
-        
-        return res.render("success.html", {queryString} )
+
+        return res.render("success.html", { queryString })
     } catch (error) {
         console.log(error)
-        
+
     }
 
 }
 
-function saveSuccess(req, res){
+function saveSuccess(req, res) {
     return res.render("success.html")
 }
 

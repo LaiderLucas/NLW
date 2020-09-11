@@ -33,10 +33,16 @@ function convertHoursToMinutes(time) {
 
 function convertMinutesToHours(time) {
     
-    const hour = parseInt((time/60))
-    const minute = (time - (hour*60))
+    let hour = parseInt((time/60))
+    let minute = (time - (hour*60))
+    if (hour < 10){
+        hour = "0" + hour
+    }
+    if (minute < 10){
+        minute = "0" + minute
+    }
     const hourFormated = hour + ":" + minute
-    return {hourFormated}
+    return hourFormated
     
 
 }

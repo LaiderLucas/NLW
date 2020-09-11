@@ -58,12 +58,12 @@
         </header>
         <main>
 
-            {% if proffys == "" %}
+            {% if Proffys == "" %}
             <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
 
             {% else %}
 
-            {% for proffy in proffys %}
+            {% for proffy in Proffys %}
 
             <article class="teacher-item">
                 <header>
@@ -78,12 +78,12 @@
                 <p>{{proffy.bio}}</p>
                 <div class="schedules">
                     {% for weekday in weekdays %}
-                    <div class='schedule {{ "opacity" if weekdayList[loop.index0].time_from.hourFormated == empty }}'>
+                    <div class='schedule'>
                         <p>Dia</p>
                         <b>{{weekday | replace("-feira","")}}</b>
                         <br>
                         <p>Horário</p>
-                        <b>{{weekdayList[loop.index0].time_from.hourFormated}} - {{weekdayList[loop.index0].time_to.hourFormated}} </b>
+                        <b>{{proffy.schedule}} - {{weekdayList[loop.index0].time_to.hourFormated}} </b>
                     </div>
     
                     {%endfor%}
