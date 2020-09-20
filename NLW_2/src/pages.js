@@ -62,6 +62,7 @@ async function pageStudy(req, res) {
                 const getSchedules = await querySchedules(proffy.class_id)
 
                 getSchedules.map((time) => {
+                    time.weekday = weekdays[time.weekday]
                     time.time_from = convertMinutesToHours(time.time_from)
                     time.time_to = convertMinutesToHours(time.time_to)
                 })

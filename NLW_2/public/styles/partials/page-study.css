@@ -110,6 +110,11 @@
     font-size: 1rem
 }
 
+.teacher-item .schedules .schedule span{
+    font-weight: bold;
+    font-size: 1.2rem
+}
+
 .teacher-item .schedules .schedule b{
     font-size: 1.2rem
 }

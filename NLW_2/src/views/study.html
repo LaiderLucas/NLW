@@ -12,7 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
-
+    
+        
 </head>
 
 <body id="page-study">
@@ -76,14 +77,29 @@
                 </header>
 
                 <p>{{proffy.bio}}</p>
-                <div class="schedules">
+                <div  class="schedules">
                     {% for weekday in weekdays %}
-                    <div class='schedule'>
+                    <div id="schedule" class='schedule'>
                         <p>Dia</p>
-                        <b>{{weekday | replace("-feira","")}}</b>
+                        <span>{{weekday | replace("-feira","")}}</span>
                         <br>
                         <p>Horário</p>
-                        <b>{{proffy.schedule}} - {{weekdayList[loop.index0].time_to.hourFormated}} </b>
+                        
+                        {% for scheduleProffy in schedules %}
+
+                        {% set index = loop.index0 %}
+                            {% if scheduleProffy[0].class_id == proffy.class_id %}
+                            
+                                {% for schedule in schedules[index] %}
+                                
+                                    {% if weekday == schedule.weekday %}
+                                        <b>{{schedule.time_from}} - {{schedule.time_to}} </b>
+                                    {%endif%}
+                                {%endfor%}
+                                
+                            {%endif%}
+
+                        {%endfor%}
                     </div>
     
                     {%endfor%}
@@ -110,6 +126,8 @@
 
         </main>
     </div>
+ <script src="/scripts/opacityField.js" defer></script>
+
 </body>
 
 </html>
