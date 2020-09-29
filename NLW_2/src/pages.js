@@ -1,11 +1,18 @@
 const Database = require('./database/db')
 
 const { subjects, weekdays, getSubject, convertHoursToMinutes, convertMinutesToHours } = require('./utils/format')
-const db = require('./database/db')
+//const db = require('./database/db')
 
 
-function pageLanding(req, res) {
-    return res.render("index.html")
+async function pageLanding(req, res) {
+    const query = `
+        SELECT COUNT() as total FROM connections
+    `
+    const db = await Database
+
+    const totalConnections = await db.all(query)
+
+    return res.render("index.html",{ totalConnections })
 }
 
 async function pageStudy(req, res) {
@@ -55,7 +62,7 @@ async function pageStudy(req, res) {
         })
 
         const schedules = []
-        async function teste() {
+        async function getAllSchedules() {
 
             for (const [id, proffy] of Proffys.entries()) {
 
@@ -71,9 +78,8 @@ async function pageStudy(req, res) {
             }
         }
 
-        await teste()
+        await getAllSchedules()
 
-        console.log(schedules)
 
 
 
@@ -133,10 +139,30 @@ function saveSuccess(req, res) {
     return res.render("success.html")
 }
 
+async function addConnections(req, res){
+    const insertConnections = require('./database/insertConnections')
+    const connections = {
+        proffy_id: req.body.id,
+        date: Date.now()
+    }
+
+    try {
+        const db = await Database
+        await insertConnections(db,{connections})
+        return res.redirect(req.body.url)
+    } 
+    
+    catch (error) {
+        console.log(error)
+    }
+    
+}
+
 module.exports = {
     pageLanding,
     pageStudy,
     pageGiveClasses,
     saveClasses,
-    saveSuccess
+    saveSuccess,
+    addConnections
 }

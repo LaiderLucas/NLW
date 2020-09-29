@@ -152,10 +152,9 @@
     font: 700 1.4rem Archivo;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     text-decoration: none;
     transition: background 0.2s;
-    margin-left: 1.6rem;
+    margin-left: 1.2rem;
 }
 
 .teacher-item footer .button:hover {

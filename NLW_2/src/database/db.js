@@ -23,6 +23,12 @@ function execute(db) {
             weekday INTEGER,
             time_from INTEGER,
             time_to INTEGER
+        );
+
+        CREATE TABLE IF NOT EXISTS connections (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            proffy_id INTEGER,
+            date DATETIME
         )
     `)
 }

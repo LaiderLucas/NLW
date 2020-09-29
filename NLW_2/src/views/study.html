@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
+    <script src="/scripts/opacityField.js" defer></script>
     
         
 </head>
@@ -111,11 +112,13 @@
                     <p>Preço/hora<strong>R$ {{proffy.cost}}</strong></p>
 
 
-
-                    <a href="https://api.whatsapp.com/send?phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.subject}} {{proffy.name}}"
-                        class="button" target="_blank">
-                        <img src="/images/icons/whatsapp.svg" alt="Whatsapp"> Entrar em contato
-                    </a>
+                    <form action="study" method="post">
+                        <input type="text" id="url" name="url" hidden value="https://api.whatsapp.com/send?phone={{proffy.whatsapp}}&text=Tenho%20interesse%20na%20sua%20aula%20de%20{{proffy.subject}}%20{{proffy.name}}">
+                        <input type="text" id="id" name="id" hidden value="{{proffy.id}}">
+                        <button class="button" type="submit">
+                            <img src="/images/icons/whatsapp.svg" alt="Whatsapp" > Entrar em contato
+                        </button>
+                    </form>
                 </footer>
             </article>
 
@@ -126,7 +129,6 @@
 
         </main>
     </div>
- <script src="/scripts/opacityField.js" defer></script>
 
 </body>
 
