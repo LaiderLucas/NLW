@@ -6,3 +6,5 @@ Projetos já desenvolvidos:
 
   - E-coleta - 1º Edição
   - Proffy - 2º Edição
+  
+  Entre nos repositório de cada edição para ver mais detalhes sobre cada projeto
