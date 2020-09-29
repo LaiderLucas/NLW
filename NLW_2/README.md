@@ -69,4 +69,4 @@ Funcionalidades:
  - [x] Adicionar os horários de cada dia da semana, e deixando opaco os dias que não tem horário
  
  #### Solução
-  - Adotado a estratégia de buscar os horários selecionando eles pelo class_id deles e adicionado em um vetor de objetos usando a funcionalidade `for .. of`, que me ajudo no problema da criação do vetor de objetos. Depois disso foi tranquilo montar a lógica para renderzar na página, bastou usar `for` e `if` no `nunjucks `
+  - Adotado a estratégia de buscar os horários selecionando eles pelo `class_id` deles e adicionado em um vetor de objetos usando a funcionalidade `for .. of`, que me ajudou no problema da criação do vetor de objetos. Depois disso foi tranquilo montar a lógica para renderzar na página, bastou usar `for` e `if` no `nunjucks `
