@@ -15,3 +15,25 @@ Funcionalidades:
   - Cadastro de Pontos de Coletas
   - Pesquisa pontos por cidade
   - Lista de Cidades com API do IBGE
+  - Tela de confirmação de Cadastro de Ponto
+  - Tela de Erro na criação de um Ponto
+  
+ Como fazer a instalação:
+ 
+ Clonando o Projeto
+ ```
+ git clone <link>
+ 
+ ```
+ 
+ Instalando todas as dependencias
+ ```
+ npm install
+ 
+ ```
+ Depois é sé executar
+ 
+ ```
+ npm start
+ 
+ ```
