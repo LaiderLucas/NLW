@@ -21,4 +21,24 @@ Funcionalidades:
   - Tela de Confirmação de Cadastro (Com redirecionamento)
 
 
+### Como fazer a instalação:
+ 
+ Clonando o Projeto
+ ```
+ git clone <link>
+ 
+ ```
+ 
+ Instalando todas as dependencias
+ ```
+ npm install
+ 
+ ```
+ Depois é só executar
+ 
+ ```
+ npm run dev
+ 
+ ```
+
 ![Convite](https://github.com/LaiderLucas/NLW/blob/master/NLW_2/Inscri%C3%A7%C3%A3o.png)
