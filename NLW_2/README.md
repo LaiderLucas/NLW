@@ -41,4 +41,19 @@ Funcionalidades:
  npm run dev
  ```
 
+# Desafios
+
+## 01 - Página de sucesso
+
+-[] Mostrar página de sucesso após o cadastro do proffy
+- aguardar 2 segundos na página e redirecionar para a listagem dos proffys, com filtro
+    - use setTimeout para aguardar os 2 segundos
+    - location.href = ""
+
+## 02 - Correção de bugs
+
+- Não permitir o usuário colocar um novo campo de dia e horário, se o dia e hora anterior estiver vazio
+- Funcionalidade de deletar um campo de dia e hora
+
+
 ![Convite](https://github.com/LaiderLucas/NLW/blob/master/NLW_2/Inscri%C3%A7%C3%A3o.png)
