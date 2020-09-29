@@ -49,8 +49,17 @@ Funcionalidades:
 - aguardar 2 segundos na página e redirecionar para a listagem dos proffys, com filtro
     - use setTimeout para aguardar os 2 segundos
     - location.href = ""
+#### Solução
+ - Criado a página de sucesso de acordo com o layout do Figma
+ - Criado a rota para renderizar a página caso de Sucesso ao Cadastrar
+ - Add a função setTimeout para fazer a espera de 2 segundos e utilizado o location.href para fazer o redirecionamento para página (inclusive com os dados que acabaram de ser cadastrado)
 
 ## 02 - Correção de bugs
 
 - [x] Não permitir o usuário colocar um novo campo de dia e horário, se o dia e hora anterior estiver vazio
+#### Solução
+ - Adicionado uma função no função de adicionar campo, que ao clicar para adicionar, verifica se os valores do ultimo elemento filho é diferente de vazio, caso seja ele adiciona um novo campo, caso contrário exibe um alerta, não me preocupei com os demais, porque mesmo que o usuário tire os valores, o processo de validação do required do HTML5 já faz essa validação para não deixar o form ir com dados vazio.
+ 
 - [x] Funcionalidade de deletar um campo de dia e hora
+#### Solução
+ - Adicionado a função ``` .remove() ````
