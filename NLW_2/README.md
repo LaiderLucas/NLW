@@ -45,7 +45,7 @@ Funcionalidades:
 
 ## 01 - Página de sucesso
 
--[] Mostrar página de sucesso após o cadastro do proffy
+-[x] Mostrar página de sucesso após o cadastro do proffy
 - aguardar 2 segundos na página e redirecionar para a listagem dos proffys, com filtro
     - use setTimeout para aguardar os 2 segundos
     - location.href = ""
