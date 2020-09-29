@@ -18,7 +18,7 @@ Funcionalidades:
   - Tela de confirmação de Cadastro de Ponto
   - Tela de Erro na criação de um Ponto
   
- Como fazer a instalação:
+### Como fazer a instalação:
  
  Clonando o Projeto
  ```
@@ -31,7 +31,7 @@ Funcionalidades:
  npm install
  
  ```
- Depois é sé executar
+ Depois é só executar
  
  ```
  npm start
