@@ -24,14 +24,17 @@ Funcionalidades:
 ### Como fazer a instalação:
  
  Clonando o Projeto
+ 
  ```
  git clone <link>
  ```
  
  Instalando todas as dependencias
+ 
  ```
  npm install
  ```
+ 
  Depois é só executar
  
  ```
