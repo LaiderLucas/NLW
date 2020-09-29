@@ -62,4 +62,4 @@ Funcionalidades:
  
 - [x] Funcionalidade de deletar um campo de dia e hora
 #### Solução
- - Adicionado a função ``` .remove() ````
+ - Adicionado a função `.remove()`
