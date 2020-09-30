@@ -70,3 +70,14 @@ Funcionalidades:
  
  #### Solução
   - Adotado a estratégia de buscar os horários selecionando eles pelo `class_id` deles e adicionado em um vetor de objetos usando a funcionalidade `for .. of`, que me ajudou no problema da criação do vetor de objetos. Depois disso foi tranquilo montar a lógica para renderzar na página, bastou usar `for` e `if` no `nunjucks `
+  
+  :white_check_mark: Registra a contagem de conexão já feitas
+  
+  #### Solução
+   - Adotado a estratégia de salvar o ID do proffy que for clicado para futura funcionalidade (Contagem de clicks, categorizar por número de clicks, maior relevância e ETC), para isso foi adotado a estratégia de adicionar o `form` envolvendo o botão com dois `inputs` escondidos, sendo um para enviar o ID e outro a URL da API do whatsApp com as informações de cada proffy. Feito isso, foi adicionado uma rota para receber essas informações, salvar no banco e redirecionar para API do whatsApp
+
+  
+  :white_check_mark: Exibir a contagem de conexão já feitas
+  
+  #### Solução
+   - Adotado a estratégia de utilizar a rota para fazer o `select count` na tabela de registro de conexãoes, e depois passo isso para a tela de inicio `\`
