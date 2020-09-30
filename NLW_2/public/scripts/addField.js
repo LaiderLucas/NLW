@@ -5,7 +5,7 @@ document.querySelector("#add-time")
 
 // função de remoção do campo
 function removeField() {
-    //reaproveitando a estrategias de pegar o ultimo elemento filho do elemento selecionado, que nesse caso é a que o botçao clicado faz parte
+    //reaproveitando a estrategias de pegar o ultimo elemento filho do elemento selecionado, que nesse caso é a que o botão clicado faz parte
     const newFieldContainer = document.querySelector('#schedule-items').lastElementChild
     newFieldContainer.remove()
 }

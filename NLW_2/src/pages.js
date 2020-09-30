@@ -50,7 +50,6 @@ async function pageStudy(req, res) {
 
             const schedule = await db.all(querySchedule)
 
-
             return schedule
         }
 
