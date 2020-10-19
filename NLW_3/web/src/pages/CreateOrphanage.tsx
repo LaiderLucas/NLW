@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import { LeafletMouseEvent } from 'leaflet'
+import { LeafletMouseEvent } from 'leaflet';
 
 import { FiPlus } from "react-icons/fi";
 
@@ -12,6 +12,7 @@ import api from "../services/api";
 import { useHistory } from "react-router-dom";
 
 export default function CreateOrphanage() {
+ 
   const history = useHistory()
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
 
@@ -68,11 +69,14 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
   
-    await api.post('orphanages', data);
+      await api.post('orphanages', data).then(() => {
+     
+      history.push('/success')
 
-    alert("Cadastro Realizado com Sucesso!!")
+    },(error) => {  
 
-    history.push('/app')
+      history.push('/error', error)
+    })
 
     console.log(
       latitude,
@@ -94,7 +98,7 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-27.2092052,-49.6401092]} 
+              center={[-15.234703, -59.328473]} 
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onclick={handleMapClick}
@@ -116,12 +120,12 @@ export default function CreateOrphanage() {
 
             <div className="input-block">
               <label htmlFor="name">Nome</label>
-              <input id="name" value={name} onChange={event => setName(event.target.value)}/>
+              <input id="name" value={name} onChange={event => setName(event.target.value)} required/>
             </div>
 
             <div className="input-block">
               <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
-              <textarea id="name" maxLength={300} value={about} onChange={event => setAbout(event.target.value)} />
+              <textarea id="name" maxLength={300} value={about} onChange={event => setAbout(event.target.value)}  required/>
             </div>
 
             <div className="input-block">
@@ -137,7 +141,7 @@ export default function CreateOrphanage() {
                   <FiPlus size={24} color="#15b6d6" />
                 </label>
               </div>
-              <input multiple onChange={handleSelectImages} type="file" id="image[]"/>
+              <input multiple onChange={handleSelectImages} type="file" id="image[]" required/>
 
             </div>
           </fieldset>
@@ -150,12 +154,13 @@ export default function CreateOrphanage() {
               <textarea 
                id="instructions"
                value={instructions} 
-               onChange={event => setInstructions(event.target.value)} />
+               onChange={event => setInstructions(event.target.value)}
+               required />
             </div>
 
             <div className="input-block">
               <label htmlFor="opening_hours">Horário de Funcionamento</label>
-              <input id="opening_hours" value={opening_hours} onChange={event => setOpeningHours(event.target.value)}/>
+              <input id="opening_hours" value={opening_hours} onChange={event => setOpeningHours(event.target.value)} required />
             </div>
 
             <div className="input-block">

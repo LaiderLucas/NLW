@@ -1,0 +1,85 @@
+#page-success, #page-error {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#page-success {
+    background: #37C77F;
+}
+
+#page-error {
+    background: #FF669D;
+}
+
+.result-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1100px;
+
+}
+
+#page-success .result-content { 
+    background: url('../../images/success.svg') no-repeat 100% center;
+}
+
+#page-error .result-content {
+    background: url('../../images/error.svg') no-repeat 100% center;
+}
+
+.result-content .content {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result-content .content strong {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 80px;
+    margin-bottom: 32px;
+}
+
+.result-content .content p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.result-content .content .button {
+    border-radius: 20px;
+    padding: 20px 40px;
+    border: none;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 25px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+#page-success .result-content .content .button {
+    background: #31B272;
+
+}
+#page-error .result-content .content .button {
+    background: #D6487B;
+}
+
+#page-error .result-content .content .button:hover {
+    background: #e74e86;
+}
+
+#page-success .result-content .content .button:hover {
+    background: #3BD689;
+}
+

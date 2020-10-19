@@ -42,6 +42,7 @@ export default function Orphanage() {
     return <p> carregando...</p>;
   }
 
+  const rotaGoogleMaps = `https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`;
   return (
     <div id="page-orphanage">
       
@@ -94,7 +95,7 @@ export default function Orphanage() {
               </Map>
 
               <footer>
-                <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`}>Ver rotas no Google Maps</a>
+                <a target="_blank" rel="noopener noreferrer" href={rotaGoogleMaps}>Ver rotas no Google Maps</a>
               </footer>
             </div>
 
