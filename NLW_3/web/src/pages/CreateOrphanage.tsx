@@ -10,6 +10,7 @@ import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 import api from "../services/api";
 import { useHistory } from "react-router-dom";
+import GetUserPosition from "../components/GetUserPosition";
 
 export default function CreateOrphanage() {
  
@@ -88,7 +89,9 @@ export default function CreateOrphanage() {
       open_on_weekends
     )
   }
-
+  var userPosition = GetUserPosition()
+    var latitude = Number(userPosition.latitude)
+    var longitude = Number(userPosition.longitude)
   return (
     <div id="page-create-orphanage">
     <Sidebar />
@@ -98,9 +101,9 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-15.234703, -59.328473]} 
+              center={[latitude, longitude]} 
               style={{ width: '100%', height: 280 }}
-              zoom={15}
+              zoom={14}
               onclick={handleMapClick}
             >
               <TileLayer 

@@ -24,18 +24,19 @@
     justify-content: space-between;
 
     background: url('../../images/landing.svg') no-repeat 80% center;
-    transition: 0.5s;
+    transition: all 0.5s;
 
 }
 
 #page-landing .content-wrapper main {
     max-width: 350px;
+    animation-duration: 1000ms;
 }
 
 #page-landing .content-wrapper main h1 {
-    font-size: 76px;
+    font-size: 4.75rem;
     font-weight: 900;
-    line-height: 78px;
+    line-height: 4.875rem;
     
 }
 
@@ -113,6 +114,7 @@
     justify-content: center;
 
     transition: all 0.2s;
+    animation-duration: 1000ms;
 }
 
 .content-wrapper .enter-app:hover {
@@ -143,7 +145,7 @@
     }
 
     #page-landing .content-wrapper main h1 {
-        font-size: 56px;
+        font-size: 3.5rem;
     }
     .content-wrapper .access-restricted {
         padding: 5px 25px;
@@ -176,8 +178,8 @@
        justify-content: center;
     }
     #page-landing .content-wrapper main h1 {
-        font-size: 36px;
-        line-height: 36px
+        font-size: 2.25rem;
+        line-height: 2.25rem;
     }
     .content-wrapper .enter-app {
         margin-top: 30px;
@@ -186,3 +188,4 @@
         bottom: 20px;
     }
 }
+

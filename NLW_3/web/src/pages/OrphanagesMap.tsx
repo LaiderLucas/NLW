@@ -7,6 +7,7 @@ import mapMarkerImg from '../images/map-marker.svg';
 import '../styles/pages/orphanages-map.css'
 import mapIcon from '../utils/mapIcon';
 import api from '../services/api';
+import GetUserPosition from '../components/GetUserPosition';
 
 interface Orphanage {
     id: number;
@@ -14,6 +15,8 @@ interface Orphanage {
     longitude: number;
     name: string;
 }
+
+
 
 function OrphanagesMap() {
     const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
@@ -23,25 +26,33 @@ function OrphanagesMap() {
             setOrphanages(response.data);
         });
     }, []);
-    
+    var userPosition = GetUserPosition()
+    var latitude = Number(userPosition.latitude)
+    var longitude = Number(userPosition.longitude)
+
+
+    const city = localStorage.getItem('city');
+    const state = localStorage.getItem('state');
     return (
         <div id="page-map">
             <aside className="sidebar-pageMaps">
                 <header>
-                    <img src={mapMarkerImg} alt="Happy"/>
+                    <Link to="/">
+                        <img src={mapMarkerImg} alt="Happy"/>
+                    </Link>
                     <h2>Escolha um orfanato no mapa</h2>
                     <p>Muitas crianças estão esperando a sua visita :)</p>
                 </header>
 
                 <footer>
-                    <strong>Pontes e Lacerda</strong>
-                    <span>Mato Grosso</span>
+                    <strong>{city}</strong>
+                    <span>{state}</span>
                 </footer>
             </aside>
 
             <Map
-                center={[-15.2341469,-59.3340592]}
-                zoom={15}
+                center={[latitude , longitude]}
+                zoom={14}
                 style={{ width: '100%', height: '100%' }}
             >
                 <TileLayer 
