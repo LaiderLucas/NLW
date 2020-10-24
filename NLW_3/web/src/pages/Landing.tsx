@@ -7,7 +7,7 @@ import GetUserPosition from '../components/GetUserPosition'
 
 
 import '../styles/pages/landing.css'
-import '../styles/pages/animations.css'
+import '../styles/components/animations.css'
 
 import logoImg from '../images/logo.svg'
 

@@ -54,6 +54,8 @@
     line-height: 34px;
     text-align: center;
     margin-bottom: 60px;
+    animation-duration: 600ms;
+
 }
 
 .result-content .content .button {
@@ -66,6 +68,8 @@
     line-height: 25px;
     text-decoration: none;
     transition: background 0.2s;
+    animation-duration: 800ms;
+
 }
 #page-success .result-content .content .button {
     background: #31B272;

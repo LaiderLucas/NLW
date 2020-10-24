@@ -9,13 +9,13 @@ export default function CreateOrphanageSucess() {
         <div id="page-success">
           <div className="result-content">
               <div className="content">
-                <strong>Ebaaa!</strong>
-                  <p>
+                <strong className="animate-up">Ebaaa!</strong>
+                  <p className="animate-up">
                       O cadastro deu certo e foi enviado
                       ao administrador para ser aprovado.
                       Agora é só esperar :)
                   </p>
-                  <Link to='/app' className="button">
+                  <Link to='/app' className="button animate-up">
                     Voltar para o mapa
                   </Link>
               </div>

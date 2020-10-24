@@ -18,6 +18,14 @@
         opacity: 1;
     }
 }
+@keyframes sidebar {
+    from {
+       transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(0)
+    }
+}
 
 .animate-up {
     animation-name: up; 
@@ -28,5 +36,11 @@
 .animate-appear {
     animation-name: appear;
     animation-duration: 1500ms;
+    animation-fill-mode: backwards;
+}
+
+.animate-sidebar {
+    animation: sidebar;
+    animation-duration: 0.5s;
     animation-fill-mode: backwards;
 }

@@ -10,14 +10,14 @@ export default function GetUserPosition() {
   const latitude = localStorage.getItem('latitude');
   const longitude = localStorage.getItem('longitude');
 
+    if(latitude || longitude !== null){    
+        fetch(`https://revgeocode.search.hereapi.com/v1/revgeocode?at=${latitude},${longitude}&resultType=address&lang=pt-BR&apiKey=${process.env.REACT_APP_HERE_TOKEN}`).then( async (response)=>{
 
- fetch(`https://revgeocode.search.hereapi.com/v1/revgeocode?at=${latitude},${longitude}&resultType=address&lang=pt-BR&apiKey=-NZJhcmyzw4P3WyhKXF8JMxTBEi6eUaCQ0nNc5pNHGk`).then( async (response)=>{
-
-    const positionUser = await response.json()
-    const getAddressUser = positionUser.items[0];
-    localStorage.setItem('city' , getAddressUser.address.city)
-    localStorage.setItem('state' , getAddressUser.address.state)
-   
-})
+            const positionUser = await response.json()
+            const getAddressUser = positionUser.items[0];
+            localStorage.setItem('city' , getAddressUser.address.city)
+            localStorage.setItem('state' , getAddressUser.address.state)
+        })
+    }
 return { latitude, longitude}
 }

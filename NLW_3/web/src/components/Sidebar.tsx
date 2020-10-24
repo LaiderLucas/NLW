@@ -5,17 +5,19 @@ import { useHistory } from 'react-router-dom';
 import mapMarkerImg from '../images/map-marker.svg';
 
 import '../styles/components/sidebar.css'
+import '../styles/components/animations.css';
+
 
 export default function Sidebar() {
 
     const { goBack } = useHistory();
 
     return (
-        <aside className="app-sidebar">
+        <aside className="app-sidebar animate-sidebar">
         <img src={mapMarkerImg} alt="Happy" />
 
         <footer>
-          <button type="button" onClick={goBack}>
+          <button className="animate-sidebar" type="button" onClick={goBack}>
             <FiArrowLeft size={24} color="#FFF" />
           </button>
         </footer>
