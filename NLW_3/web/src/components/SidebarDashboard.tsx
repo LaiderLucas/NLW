@@ -13,9 +13,9 @@ export default function SidebarDashboard() {
   const state = localStorage.getItem('state');
     return (
         <aside className="app-sidebar animate-sidebar">
-          <img className="logotipo" src={logotipo} alt="Happy" />
+          <img className="logotipo animate-sidebar" src={logotipo} alt="Happy" />
           
-          <div className="location">
+          <div className="location animate-sidebar">
             <strong>{city}</strong>
             <span>{state}</span>
           </div>

@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 
-import '../styles/pages/dashboard.css';
-import '../styles/components/animations.css';
-import SidebarDashboard from "../components/SidebarDashboard";
-
-import api from '../services/api';
-
-
-
-
+import '../../styles/pages/dashboard.css';
+import '../../styles/components/animations.css';
+import SidebarDashboard from "../../components/SidebarDashboard";
 
 
 function Login() {
@@ -44,7 +38,7 @@ function Login() {
                                 <label htmlFor="remember" >Lembrar-me</label>
                             </div>
                            
-                            <Link to="/">
+                            <Link to="/forgot-password">
                                 <label id="forgot-password">Esqueci minha senha</label>
                             </Link>
                         </div>

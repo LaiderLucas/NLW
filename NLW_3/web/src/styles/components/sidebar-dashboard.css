@@ -5,6 +5,7 @@
   
 #page-login aside.app-sidebar img {
     width: 260px;
+    animation-duration: 1000ms;
   }
 #page-login .location {
   padding-top: 80px;
@@ -15,4 +16,5 @@
   flex-direction: column;
 
   text-align: center;
+  animation-duration: 1200ms;
 }

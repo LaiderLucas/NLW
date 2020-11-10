@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-import '../styles/pages/result-create-orphange.css'
+import '../../styles/pages/result-create-orphange.css'
 
 export default function CreateOrphanageSucess() {
     return (
