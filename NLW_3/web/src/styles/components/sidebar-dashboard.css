@@ -1,0 +1,18 @@
+#page-login aside.app-sidebar {
+    width: 60%;
+    justify-content:center;
+  }
+  
+#page-login aside.app-sidebar img {
+    width: 260px;
+  }
+#page-login .location {
+  padding-top: 80px;
+  font-size: 20px;
+  line-height: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
