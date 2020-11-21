@@ -41,7 +41,7 @@ function Landing() {
           </Link>
         
 
-        <Link to="/app" className="enter-app animate-up">
+        <Link to="/dashboard" className="enter-app animate-up">
           <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
         </Link>
 

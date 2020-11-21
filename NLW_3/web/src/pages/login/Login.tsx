@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 import '../../styles/pages/dashboard.css';
 import '../../styles/components/animations.css';
-import SidebarDashboard from "../../components/SidebarDashboard";
+import SidebarDashboard from "../../components/SidebarLogin";
 
 
 function Login() {

@@ -6,6 +6,9 @@ import Landing from './pages/Landing';
 import Login from './pages/login/Login';
 
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import ResetPassword from './pages/forgotPassword/ResetPassword';
+
+import OrphanagesRegistered from './pages/dashboard/OrphanagesRegistered';
 
 
 import OrphanagesMap from './pages/orphanages/OrphanagesMap';
@@ -24,6 +27,10 @@ function Routes() {
                 <Route path="/login" component={Login} />
 
                 <Route path="/forgot-password" component={ForgotPassword} />
+                <Route path="/reset-password" component={ResetPassword} />
+
+                <Route path="/dashboard" component={OrphanagesRegistered} />
+
 
                 <Route path="/app" component={OrphanagesMap} />
 

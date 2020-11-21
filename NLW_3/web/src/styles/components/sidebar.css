@@ -15,8 +15,7 @@ aside.app-sidebar img {
     width: 48px;
   }
   
-aside.app-sidebar footer a,
-aside.app-sidebar footer button {
+.rounded-button {
     width: 48px;
     height: 48px;
   

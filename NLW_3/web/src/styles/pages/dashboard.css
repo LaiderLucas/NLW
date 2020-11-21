@@ -24,7 +24,7 @@ main button.back-button {
 
 form.dashboard-form fieldset {
     width: 30vw;
-    height: 60vh;
+    height: 70vh;
     margin: 0 60px 0 40px;
     border: none;
     display: flex;
@@ -72,6 +72,8 @@ form.dashboard-form fieldset .input-block label {
     line-height: 22px;
     padding-bottom: 10px;
 }
+
+
 
 form.dashboard-form fieldset .input-block input{
     height: 30px;
@@ -126,4 +128,39 @@ form.dashboard-form fieldset button.dashboard-button {
 
 form.dashboard-form fieldset button.dashboard-button:hover {
     background: #31d684;
+}
+
+
+form.dashboard-form fieldset .input-block .input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form.dashboard-form fieldset .input-block .input input {
+    width: 80%;
+    height: 30px;
+    background: #F5F8FA;
+    border: 1px solid #D3E2E5;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    color: #5C8599;
+    padding: 20px;
+}
+
+form.dashboard-form fieldset .input-block span {
+    width: 15%;
+    height: 97.3%;
+    margin-left: -2px;
+    background: url('../../images/eye.svg') no-repeat center #F5F8FA;
+    border-right: 1px solid #D3E2E5;
+    border-top: 1px solid #D3E2E5;
+    border-bottom: 1px solid #D3E2E5;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    color: #5C8599;
+    cursor: pointer;
+}
+form.dashboard-form fieldset .input-block span.notVisible {
+    background: url('../../images/eye-off.svg') no-repeat center #F5F8FA;
 }

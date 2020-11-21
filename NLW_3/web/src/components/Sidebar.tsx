@@ -17,7 +17,7 @@ export default function Sidebar() {
         <img src={mapMarkerImg} alt="Happy" />
 
         <footer>
-          <button className="animate-sidebar" type="button" onClick={goBack}>
+          <button className="animate-sidebar rounded-button" type="button" onClick={goBack}>
             <FiArrowLeft size={24} color="#FFF" />
           </button>
         </footer>

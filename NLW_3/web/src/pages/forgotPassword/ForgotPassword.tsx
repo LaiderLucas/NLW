@@ -4,12 +4,13 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 import '../../styles/pages/dashboard.css';
 import '../../styles/components/animations.css';
-import SidebarDashboard from "../../components/SidebarDashboard";
+import SidebarDashboard from "../../components/SidebarLogin";
 
 
 function ForgotPassword() {
-  function handleSubmit() {
-      console.log('ok')
+    const history = useHistory();
+    function handleSubmit() {
+      history.push('/reset-password')
   }
   const { goBack } = useHistory();
     return (
@@ -30,7 +31,7 @@ function ForgotPassword() {
                             <input name="email" type="email" required/>
                         </div>
 
-                        <button className="dashboard-button animate-up" type="submit">Entrar</button>
+                        <button className="dashboard-button animate-up" type="submit">Enviar</button>
                     </fieldset>
                     
                 </form>
