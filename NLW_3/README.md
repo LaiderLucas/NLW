@@ -21,8 +21,8 @@ Funcionalidades:
   - Tela de Detalhes dos Orfanatos
 
 Adicionais dos Desafios
-  - Adicionado as páginas
-    -
+  - Paginas:
+    - cc
 
 
 ### Como fazer a instalação:
