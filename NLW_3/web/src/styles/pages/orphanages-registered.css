@@ -7,12 +7,40 @@ main#content {
   gap: 20px;
   grid-template-columns: 1fr 1fr;
 }
+
+#orphanages-registered header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #D3E2E5;
+}
+
+#orphanages-registered header h1 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 34px;
+  color: #4D6F80;
+}
+
+#orphanages-registered header span {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #8FA7B2;
+}
+
 #orphanages-registered .map-container {
     margin-top: 20px;
     background: #FFF;
     border: 1px solid #B3DAE2;
     border-radius: 20px;
   }
+
   
 #orphanages-registered .map-container footer {
     padding: 10px 20px;

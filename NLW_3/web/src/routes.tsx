@@ -15,8 +15,8 @@ import OrphanagesMap from './pages/orphanages/OrphanagesMap';
 import CreateOrphanage from './pages/orphanages/CreateOrphanage';
 import Orphanage from './pages/orphanages/Orphanage';
 
-import CreateOrphanageSucess from './pages/returnForUser/CreateOrphanageSucess';
-import NotCreateOrphanage from './pages/returnForUser/NotCreateOrphanage';
+import Success from './pages/returnForUser/Success';
+import Errors from './pages/returnForUser/Error';
 
 function Routes() {
     return (
@@ -37,8 +37,8 @@ function Routes() {
                 <Route path="/orphanages/create" component={CreateOrphanage} />
                 <Route path="/orphanages/:id" component={Orphanage} />
 
-                <Route path="/success" component={CreateOrphanageSucess} />
-                <Route path="/error" component={NotCreateOrphanage} />
+                <Route path="/success" component={Success} />
+                <Route path="/error" component={Errors} />
             </Switch>
         </BrowserRouter>
     );
