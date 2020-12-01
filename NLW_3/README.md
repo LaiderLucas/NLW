@@ -22,7 +22,10 @@ Funcionalidades:
 
 Adicionais dos Desafios
   - Paginas:
-    - cc
+    - Login (Somente Página Estática)
+    - Forgot-Password (Somente Página Estática)
+    - Reset-Password (Somente Página Estática)
+    - Dashboard (Lista de Orfanatos Cadastrado, já conectado com backend)
 
 
 ### Como fazer a instalação:
