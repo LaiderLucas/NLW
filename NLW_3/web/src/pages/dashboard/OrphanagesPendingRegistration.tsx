@@ -37,7 +37,7 @@ export default function OrphanagesRegistered() {
     <div id="orphanages-registered">
       <Sidebar />
       <header>
-        <h1>Orfanatos Cadastrados</h1>
+        <h1>Cadastros Pendentes</h1>
         <span>{orphanages.length} Orfanatos</span>
       </header>
       <main id="content">
