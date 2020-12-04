@@ -4,7 +4,7 @@ Repositório dos projetos executados durante as semanas da NLW oferecida pela Ro
 
 Projetos já desenvolvidos:
 
-  - E-coleta - 1º Edição
-  - Proffy - 2º Edição
+  - [E-coleta - 1º Edição](https://github.com/LaiderLucas/NLW/tree/master/NLW_1)
+  - [Proffy - 2º Edição](https://github.com/LaiderLucas/NLW/tree/master/NLW_2)
+  - [Happy - 3º Edição](https://github.com/LaiderLucas/NLW/tree/master/NLW_3)
   
-  Entre nos repositório de cada edição para ver mais detalhes sobre cada projeto
