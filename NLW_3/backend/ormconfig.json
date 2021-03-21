@@ -4,6 +4,7 @@
     "migrations": [
         "./src/database/migrations/*.ts"
     ],
+    "logging": false,
     "entities": [
         "./src/models/*.ts"
     ],

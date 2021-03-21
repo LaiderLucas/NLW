@@ -4,6 +4,11 @@
 Tecnologias Utilizadas:
   - Node.Js (Backend)
   - SQLite3 (Banco de Dados)
+  - TypeScript
+  - Ethereal-Email
+  - TypeORM
+  - Express
+  - Jest
 
 Um pouco sobre:
 > A API calculate NPS foi o desenvolvido com o intuito de auxiliar as empresas a mensurar como ela está sendo vista perante seus clientes/usuários. Para seu desenvolvimento foram utilizados além as tecnologias acima, o [TYPESCRIPT],  durante o desenvolvimento, foram abordados vários conceitos, dentrele eles, conceitos de testes e Back-End, bancos de Dados, validação de dados, dentre outros.
