@@ -8,3 +8,5 @@ date-fns // lidar com datas react
 server-json // criar um servidor fake para dados json
 yarn build // cria build do projeto
 yarn start // inicia a build do projeto
+
+rc-slider // biblioteca de slider para react
